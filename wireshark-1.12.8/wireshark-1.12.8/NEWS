@@ -1,0 +1,152 @@
+                         Wireshark 1.12.8 Release Notes
+     __________________________________________________________________
+
+What is Wireshark?
+
+   Wireshark is the world's most popular network protocol analyzer. It is
+   used for troubleshooting, analysis, development and education.
+     __________________________________________________________________
+
+What's New
+
+  Bug Fixes
+
+   The following vulnerabilities have been fixed.
+     * [1]wnpa-sec-2015-30
+       Pcapng file parser crash. Discovered by Dario Lombardo and Shannon
+       Sabens. ([2]Bug 11455) [3]CVE-2015-7830
+
+   The following bugs have been fixed:
+     * Last Address field for IPv6 RPL routing header is interpreted
+       incorrectly. ([4]Bug 10560)
+     * Comparing two capture files crashes Wireshark when navigating the
+       results. ([5]Bug 11098)
+     * 802.11 frame is not correctly dissected if it contains HT Control.
+       ([6]Bug 11351)
+     * GVCP bit-fields not updated. ([7]Bug 11442)
+     * Tshark crash when specifying ssl.keys_list on CLI. ([8]Bug 11443)
+     * pcapng: SPB capture length is incorrectly truncated if IDB snaplen
+       = 0. ([9]Bug 11483)
+     * pcapng: NRB IPv4 address is endian swapped but shouldn't be.
+       ([10]Bug 11484)
+     * pcapng: NRB with options causes file read failure. ([11]Bug 11485)
+     * pcapng: ISB without if_drop option is shown as max value. ([12]Bug
+       11489)
+     * UNISTIM dissector - Message length not included in offset for
+       "Select Adjustable Rx Volume". ([13]Bug 11497)
+
+  New and Updated Features
+
+   There are no new features in this release.
+
+  New Protocol Support
+
+   There are no new protocols in this release.
+
+  Updated Protocol Support
+
+   DIAMETER, GVCP, IEEE 802.11, IPv6, and UNISTIM
+
+  New and Updated Capture File Support
+
+   and pcapng
+     __________________________________________________________________
+
+Getting Wireshark
+
+   Wireshark source code and installation packages are available from
+   [14]https://www.wireshark.org/download.html.
+
+  Vendor-supplied Packages
+
+   Most Linux and Unix vendors supply their own Wireshark packages. You
+   can usually install or upgrade Wireshark using the package management
+   system specific to that platform. A list of third-party packages can be
+   found on the [15]download page on the Wireshark web site.
+     __________________________________________________________________
+
+File Locations
+
+   Wireshark and TShark look in several different locations for preference
+   files, plugins, SNMP MIBS, and RADIUS dictionaries. These locations
+   vary from platform to platform. You can use About->Folders to find the
+   default locations on your system.
+     __________________________________________________________________
+
+Known Problems
+
+   Dumpcap might not quit if Wireshark or TShark crashes. ([16]Bug 1419)
+
+   The BER dissector might infinitely loop. ([17]Bug 1516)
+
+   Capture filters aren't applied when capturing from named pipes.
+   ([18]Bug 1814)
+
+   Filtering tshark captures with read filters (-R) no longer works.
+   ([19]Bug 2234)
+
+   The 64-bit Windows installer does not support Kerberos decryption.
+   ([20]Win64 development page)
+
+   Resolving ([21]Bug 9044) reopens ([22]Bug 3528) so that Wireshark no
+   longer automatically decodes gzip data when following a TCP stream.
+
+   Application crash when changing real-time option. ([23]Bug 4035)
+
+   Hex pane display issue after startup. ([24]Bug 4056)
+
+   Packet list rows are oversized. ([25]Bug 4357)
+
+   Wireshark and TShark will display incorrect delta times in some cases.
+   ([26]Bug 4985)
+     __________________________________________________________________
+
+Getting Help
+
+   Community support is available on [27]Wireshark's Q&A site and on the
+   wireshark-users mailing list. Subscription information and archives for
+   all of Wireshark's mailing lists can be found on [28]the web site.
+
+   Official Wireshark training and certification are available from
+   [29]Wireshark University.
+     __________________________________________________________________
+
+Frequently Asked Questions
+
+   A complete FAQ is available on the [30]Wireshark web site.
+     __________________________________________________________________
+
+   Last updated 2015-10-14 09:44:12 PDT
+
+References
+
+   1. https://www.wireshark.org/security/wnpa-sec-2015-30.html
+   2. https://bugs.wireshark.org/bugzilla/show_bug.cgi?id=11455
+   3. http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-7830
+   4. https://bugs.wireshark.org/bugzilla/show_bug.cgi?id=10560
+   5. https://bugs.wireshark.org/bugzilla/show_bug.cgi?id=11098
+   6. https://bugs.wireshark.org/bugzilla/show_bug.cgi?id=11351
+   7. https://bugs.wireshark.org/bugzilla/show_bug.cgi?id=11442
+   8. https://bugs.wireshark.org/bugzilla/show_bug.cgi?id=11443
+   9. https://bugs.wireshark.org/bugzilla/show_bug.cgi?id=11483
+  10. https://bugs.wireshark.org/bugzilla/show_bug.cgi?id=11484
+  11. https://bugs.wireshark.org/bugzilla/show_bug.cgi?id=11485
+  12. https://bugs.wireshark.org/bugzilla/show_bug.cgi?id=11489
+  13. https://bugs.wireshark.org/bugzilla/show_bug.cgi?id=11497
+  14. https://www.wireshark.org/download.html
+  15. https://www.wireshark.org/download.html#thirdparty
+  16. https://bugs.wireshark.org/bugzilla/show_bug.cgi?id=1419
+  17. https://bugs.wireshark.org/bugzilla/show_bug.cgi?id=1516
+  18. https://bugs.wireshark.org/bugzilla/show_bug.cgi?id=1814
+  19. https://bugs.wireshark.org/bugzilla/show_bug.cgi?id=2234
+  20. https://wiki.wireshark.org/Development/Win64
+  21. https://bugs.wireshark.org/bugzilla/show_bug.cgi?id=9044
+  22. https://bugs.wireshark.org/bugzilla/show_bug.cgi?id=3528
+  23. https://bugs.wireshark.org/bugzilla/show_bug.cgi?id=4035
+  24. https://bugs.wireshark.org/bugzilla/show_bug.cgi?id=4056
+  25. https://bugs.wireshark.org/bugzilla/show_bug.cgi?id=4357
+  26. https://bugs.wireshark.org/bugzilla/show_bug.cgi?id=4985
+  27. https://ask.wireshark.org/
+  28. https://www.wireshark.org/lists/
+  29. http://www.wiresharktraining.com/
+  30. https://www.wireshark.org/faq.html
